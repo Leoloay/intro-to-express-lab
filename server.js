@@ -68,8 +68,12 @@ app.get("/shoes", (req, res) => {
 
   let filteredShoes = shoes
 
+  //   shoes.forEach(shoe => {
+
+  // });
+
   if (minPrice !== undefined) {
-    filteredShoes = filteredShoes.filter((shoe) => shoe.price >= minPrice)
+    filteredShoes = shoes.filter((shoe) => shoes.price >= minPrice)
   }
 
   if (maxPrice !== undefined) {
@@ -80,7 +84,7 @@ app.get("/shoes", (req, res) => {
     filteredShoes = filteredShoes.filter((shoe) => shoe.type === shoeType)
   }
 
-  res.send(`Name: ${shoe.name}, Price: $${shoe.price}, Type: ${shoe.type}`)
+  res.send(`Name: ${shoes.name}, Price: $${shoes.price}, Type: ${shoes.type}`)
 })
 // listen to requests on port 3000
 app.listen(3000, () => {
